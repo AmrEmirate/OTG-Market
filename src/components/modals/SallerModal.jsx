@@ -1,5 +1,49 @@
 import React from 'react';
 
+const formatFF = `@oktagram_maou 
+
+Kode Akun : FFD01
+
+Informasi Akun
+• Stock : Admin/Perantara
+• Login : -
+• Bind : -
+• Harga : -
+• Nyicil : (On/Off)
+• Kekurangan : -
+
+Spek Singkat
+• -
+
+Status : Ready / Sold
+
+Akun Bergaransi Sesuai Ketentuan 
+
+No Tlp OTG Market 
+https://wa.me/6285159225304`;
+
+const formatML = `@oktagram_maou 
+
+Kode Akun : MLA01
+
+Informasi Akun
+• Stock : -
+• Login : -
+• Status : -
+• Harga : -
+• Nyicil : -
+• Kekurangan : -
+
+Spek Singkat
+• -
+
+Status : Ready / Sold
+
+Akun Bergaransi Sesuai Ketentuan
+
+No Tlp OTG Market 
+https://wa.me/6285159225304`;
+
 const SallerModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
   return (
@@ -26,53 +70,41 @@ const SallerModal = ({ isOpen, onClose }) => {
 
           <div className="space-y-4">
             <h3 className="font-bold text-primary text-center">FORMAT FF (Free Fire)</h3>
-            <div className="bg-black/30 p-4 rounded-xl border border-white/5 font-mono text-xs sm:text-sm whitespace-pre-wrap text-white/80 select-all">
-{`@oktagram_maou 
-
-Kode Akun : FFD01
-
-Informasi Akun
-• Stock : Admin/Perantara
-• Login : -
-• Bind : -
-• Harga : -
-• Nyicil : (On/Off)
-• Kekurangan : -
-
-Spek Singkat
-• -
-
-Status : Ready / Sold
-
-Akun Bergaransi Sesuai Ketentuan 
-
-No Tlp OTG Market 
-https://wa.me/6285159225304`}
+            <div className="relative">
+              <button 
+                onClick={() => {
+                  navigator.clipboard.writeText(formatFF);
+                  alert('Format FF disalin!');
+                }}
+                className="absolute top-2 right-2 bg-white/10 hover:bg-white/20 active:scale-95 text-white px-3 py-1.5 rounded-lg text-xs font-bold transition-all opacity-80 hover:opacity-100 flex items-center gap-1 backdrop-blur-md"
+              >
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                </svg>
+                Salin
+              </button>
+              <div className="bg-black/30 p-4 pt-12 rounded-xl border border-white/5 font-mono text-xs sm:text-sm whitespace-pre-wrap text-white/80 select-all">
+{formatFF}
+              </div>
             </div>
 
             <h3 className="font-bold text-primary text-center mt-6">FORMAT ML (Mobile Legends)</h3>
-            <div className="bg-black/30 p-4 rounded-xl border border-white/5 font-mono text-xs sm:text-sm whitespace-pre-wrap text-white/80 select-all">
-{`@oktagram_maou 
-
-Kode Akun : MLA01
-
-Informasi Akun
-• Stock : -
-• Login : -
-• Status : -
-• Harga : -
-• Nyicil : -
-• Kekurangan : -
-
-Spek Singkat
-• -
-
-Status : Ready / Sold
-
-Akun Bergaransi Sesuai Ketentuan
-
-No Tlp OTG Market 
-https://wa.me/6285159225304`}
+            <div className="relative">
+              <button 
+                onClick={() => {
+                  navigator.clipboard.writeText(formatML);
+                  alert('Format ML disalin!');
+                }}
+                className="absolute top-2 right-2 bg-white/10 hover:bg-white/20 active:scale-95 text-white px-3 py-1.5 rounded-lg text-xs font-bold transition-all opacity-80 hover:opacity-100 flex items-center gap-1 backdrop-blur-md"
+              >
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                </svg>
+                Salin
+              </button>
+              <div className="bg-black/30 p-4 pt-12 rounded-xl border border-white/5 font-mono text-xs sm:text-sm whitespace-pre-wrap text-white/80 select-all">
+{formatML}
+              </div>
             </div>
           </div>
         </div>
