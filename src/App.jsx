@@ -9,7 +9,7 @@ import PeraturanView from './views/PeraturanView';
 function App() {
   const location = useLocation();
   const path = decodeURIComponent(location.pathname);
-  const currentView = path === '/FEE TRANSAKSI' ? 'fee' : path === '/PERATURAN' ? 'peraturan' : 'informasi';
+  const currentView = path.startsWith('/FEE TRANSAKSI') ? 'fee' : path.startsWith('/PERATURAN') ? 'peraturan' : 'informasi';
 
   return (
     <>

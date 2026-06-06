@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import LinkCard from '../components/LinkCard';
 import PeraturanNyicilModal from '../components/modals/PeraturanNyicilModal';
 import PeraturanCariModal from '../components/modals/PeraturanCariModal';
@@ -6,10 +7,16 @@ import PeraturanFFModal from '../components/modals/PeraturanFFModal';
 import PeraturanMLModal from '../components/modals/PeraturanMLModal';
 
 const PeraturanView = () => {
-  const [isPeraturanNyicilOpen, setIsPeraturanNyicilOpen] = useState(false);
-  const [isPeraturanCariOpen, setIsPeraturanCariOpen] = useState(false);
-  const [isPeraturanFFOpen, setIsPeraturanFFOpen] = useState(false);
-  const [isPeraturanMLOpen, setIsPeraturanMLOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const path = decodeURIComponent(location.pathname);
+
+  const isPeraturanNyicilOpen = path === '/PERATURAN/Syarat Untuk Nyicil';
+  const isPeraturanCariOpen = path === '/PERATURAN/Tata Cara Pencarian Akun';
+  const isPeraturanFFOpen = path === '/PERATURAN/Rules FF FT / Isian';
+  const isPeraturanMLOpen = path === '/PERATURAN/Rules ML Turnamen';
+
+  const handleClose = () => navigate('/PERATURAN');
 
   return (
     <section className="w-full flex flex-col gap-4 animate-fade-in text-center mt-0">
@@ -21,15 +28,15 @@ const PeraturanView = () => {
         <div className="h-[1px] flex-grow bg-white/20"></div>
       </div>
 
-      <LinkCard title="1. Syarat Untuk Nyicil" onClick={() => setIsPeraturanNyicilOpen(true)} />
-      <LinkCard title="2. Tata Cara Pencarian Akun" onClick={() => setIsPeraturanCariOpen(true)} />
-      <LinkCard title="3. Rules FF FT / Isian" onClick={() => setIsPeraturanFFOpen(true)} />
-      <LinkCard title="4. Rules ML Turnamen" onClick={() => setIsPeraturanMLOpen(true)} />
+      <LinkCard title="Syarat Untuk Nyicil" onClick={() => navigate('/PERATURAN/Syarat Untuk Nyicil')} />
+      <LinkCard title="Tata Cara Pencarian Akun" onClick={() => navigate('/PERATURAN/Tata Cara Pencarian Akun')} />
+      <LinkCard title="Rules FF FT / Isian" onClick={() => navigate('/PERATURAN/Rules FF FT / Isian')} />
+      <LinkCard title="Rules ML Turnamen" onClick={() => navigate('/PERATURAN/Rules ML Turnamen')} />
 
-      <PeraturanNyicilModal isOpen={isPeraturanNyicilOpen} onClose={() => setIsPeraturanNyicilOpen(false)} />
-      <PeraturanCariModal isOpen={isPeraturanCariOpen} onClose={() => setIsPeraturanCariOpen(false)} />
-      <PeraturanFFModal isOpen={isPeraturanFFOpen} onClose={() => setIsPeraturanFFOpen(false)} />
-      <PeraturanMLModal isOpen={isPeraturanMLOpen} onClose={() => setIsPeraturanMLOpen(false)} />
+      <PeraturanNyicilModal isOpen={isPeraturanNyicilOpen} onClose={handleClose} />
+      <PeraturanCariModal isOpen={isPeraturanCariOpen} onClose={handleClose} />
+      <PeraturanFFModal isOpen={isPeraturanFFOpen} onClose={handleClose} />
+      <PeraturanMLModal isOpen={isPeraturanMLOpen} onClose={handleClose} />
     </section>
   );
 };

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { feeLinks } from '../data/links';
 import LinkCard from '../components/LinkCard';
 import RekberModal from '../components/modals/RekberModal';
@@ -7,10 +8,16 @@ import SallerModal from '../components/modals/SallerModal';
 import CariAkunModal from '../components/modals/CariAkunModal';
 
 const FeeTransaksiView = () => {
-  const [isRekberModalOpen, setIsRekberModalOpen] = useState(false);
-  const [isRebinModalOpen, setIsRebinModalOpen] = useState(false);
-  const [isSallerModalOpen, setIsSallerModalOpen] = useState(false);
-  const [isCariAkunModalOpen, setIsCariAkunModalOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const path = decodeURIComponent(location.pathname);
+
+  const isRekberModalOpen = path === '/FEE TRANSAKSI/Jasa Rekber/Mc';
+  const isRebinModalOpen = path === '/FEE TRANSAKSI/Jasa Pengamanan akun ( Rebin )';
+  const isSallerModalOpen = path === '/FEE TRANSAKSI/Jasa Penjualan Akun ( Stock/Saller )';
+  const isCariAkunModalOpen = path === '/FEE TRANSAKSI/Jasa Pencarian Akun ( Ml/FF )';
+
+  const handleClose = () => navigate('/FEE TRANSAKSI');
 
   return (
     <section className="w-full flex flex-col gap-4 animate-fade-in">
@@ -24,24 +31,24 @@ const FeeTransaksiView = () => {
 
       {feeLinks.map((link, index) => {
         if (link.title === 'Jasa Rekber/Mc') {
-          return <LinkCard key={`fee-${index}`} title={link.title} onClick={() => setIsRekberModalOpen(true)} />;
+          return <LinkCard key={`fee-${index}`} title={link.title} onClick={() => navigate(`/FEE TRANSAKSI/${link.title}`)} />;
         }
         if (link.title === 'Jasa Pengamanan akun ( Rebin )') {
-          return <LinkCard key={`fee-${index}`} title={link.title} onClick={() => setIsRebinModalOpen(true)} />;
+          return <LinkCard key={`fee-${index}`} title={link.title} onClick={() => navigate(`/FEE TRANSAKSI/${link.title}`)} />;
         }
         if (link.title === 'Jasa Penjualan Akun ( Stock/Saller )') {
-          return <LinkCard key={`fee-${index}`} title={link.title} onClick={() => setIsSallerModalOpen(true)} />;
+          return <LinkCard key={`fee-${index}`} title={link.title} onClick={() => navigate(`/FEE TRANSAKSI/${link.title}`)} />;
         }
         if (link.title === 'Jasa Pencarian Akun ( Ml/FF )') {
-          return <LinkCard key={`fee-${index}`} title={link.title} onClick={() => setIsCariAkunModalOpen(true)} />;
+          return <LinkCard key={`fee-${index}`} title={link.title} onClick={() => navigate(`/FEE TRANSAKSI/${link.title}`)} />;
         }
         return <LinkCard key={`fee-${index}`} title={link.title} url={link.url} />;
       })}
 
-      <RekberModal isOpen={isRekberModalOpen} onClose={() => setIsRekberModalOpen(false)} />
-      <RebinModal isOpen={isRebinModalOpen} onClose={() => setIsRebinModalOpen(false)} />
-      <SallerModal isOpen={isSallerModalOpen} onClose={() => setIsSallerModalOpen(false)} />
-      <CariAkunModal isOpen={isCariAkunModalOpen} onClose={() => setIsCariAkunModalOpen(false)} />
+      <RekberModal isOpen={isRekberModalOpen} onClose={handleClose} />
+      <RebinModal isOpen={isRebinModalOpen} onClose={handleClose} />
+      <SallerModal isOpen={isSallerModalOpen} onClose={handleClose} />
+      <CariAkunModal isOpen={isCariAkunModalOpen} onClose={handleClose} />
     </section>
   );
 };
