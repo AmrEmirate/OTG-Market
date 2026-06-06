@@ -4,8 +4,11 @@ import { useLocation, useNavigate } from 'react-router-dom';
 const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const path = decodeURIComponent(location.pathname);
-  const currentView = path === '/FEE TRANSAKSI' ? 'fee' : path === '/PERATURAN' ? 'peraturan' : 'informasi';
+  const path = decodeURIComponent(location.pathname).toLowerCase();
+  
+  let currentView = 'informasi';
+  if (path.startsWith('/fee')) currentView = 'fee';
+  if (path.startsWith('/peraturan')) currentView = 'peraturan';
 
   const handleShare = async () => {
     if (navigator.share) {
