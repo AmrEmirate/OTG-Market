@@ -42,3 +42,22 @@ export const socialLinks = {
   telegram: 'https://t.me/oktagram_maou',
   gmail: 'mailto:oktagrammaouu@gmail.com',
 };
+
+export const feeLinks = [
+  {
+    title: 'Jasa Rekber/Mc',
+    url: '#'
+  },
+  {
+    title: 'Jasa Pengamanan akun ( Rebin )',
+    url: '#'
+  },
+  {
+    title: 'Jasa Penjualan Akun ( Stock/Saller )',
+    url: '#'
+  },
+  {
+    title: 'Jasa Pencarian Akun ( Ml/FF )',
+    url: '#'
+  }
+];
