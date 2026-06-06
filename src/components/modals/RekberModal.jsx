@@ -1,8 +1,40 @@
 import React from 'react';
 
+const textToCopy = `*TATA CARA REKBER/MC*
+
+1. Harap pembeli untuk transfer ke admin sesuai total akun dan kirim bukti transaksi ke admin
+2. Setelah transaksi berhasil mohon bersabar untuk menunggu konfirmasi admin
+3. Setelah saldo masuk admin akan menyuruh penjual untuk memberikan data akun
+
+*PEMBAYARAN*
+- Jago : 109736366476 (A/N Amr Emirate Abdurahman)
+- GOPAY : 081284525304 (A/N Amr Emirate Abdurahman)
+- DANA : 081284525304 (A/N Amr Emirate Abdurahman)
+
+*LIST FEE REKBER NORMAL*
+- 0 - 99 = 5k
+- 100 - 199 = 10k
+- 200 - 299 = 15k
+- 300 - 599 = 20k
+- 600 - 999 = 30k
+- 1jt+++ = 40k
+- 2jt+++ = 50k
+- 3jt - dst = 60k
+
+*LIST FEE REKBER 14 HARI*
+- 0 - 99 = 10k
+- 100 - 199 = 15k
+- 200 - 299 = 25k
+- 300 - 599 = 30k
+- 600 - 999 = 50k
+- 1jt+++ = 70k
+- 2jt+++ = 90k
+- 3jt - dst = 110k
+
+Note: Jika tidak paham buyer di sarankan untuk memakai jasa admin mengaman akun`;
+
 const RekberModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
-  
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
       <div className="bg-surface/95 border border-white/10 rounded-2xl p-6 w-full max-w-md max-h-[85vh] overflow-y-auto custom-scrollbar relative shadow-2xl">
@@ -17,7 +49,18 @@ const RekberModal = ({ isOpen, onClose }) => {
         </button>
         
         <h2 className="text-xl font-bold text-primary mb-4 text-center tracking-wider">TATA CARA REKBER/MC</h2>
-        
+        <button 
+          onClick={() => {
+            navigator.clipboard.writeText(textToCopy);
+            alert('Informasi disalin!');
+          }}
+          className="mx-auto flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 active:scale-95 text-white px-4 py-2 rounded-lg text-xs font-bold transition-all opacity-80 hover:opacity-100 mb-6"
+        >
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+          </svg>
+          Salin Semua Teks
+        </button>
         <div className="text-sm text-on-surface-variant space-y-5">
           <div className="space-y-2 italic opacity-90 text-center leading-relaxed">
             <p>Harap pembeli untuk transfer ke admin sesuai total akun dan kirim bukti transaksi ke admin</p>
