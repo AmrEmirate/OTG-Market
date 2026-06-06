@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const [copied, setCopied] = React.useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const path = decodeURIComponent(location.pathname).toLowerCase();
@@ -23,7 +24,8 @@ const Header = () => {
       }
     } else {
       navigator.clipboard.writeText(window.location.href);
-      alert('Link disalin ke clipboard!');
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
     }
   };
 
@@ -45,9 +47,15 @@ const Header = () => {
           onClick={handleShare}
           className="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 duration-150 p-2"
         >
-          <span aria-hidden="true" className="material-symbols-outlined">
-            share
-          </span>
+          {copied ? (
+            <svg className="w-6 h-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+          ) : (
+            <span aria-hidden="true" className="material-symbols-outlined">
+              share
+            </span>
+          )}
         </button>
       </div>
       
