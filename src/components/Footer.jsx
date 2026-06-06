@@ -69,9 +69,6 @@ const Footer = () => {
           </svg>
         </a>
       </div>
-      <p className="text-white/30 text-xs mt-8 font-body-sm">
-        © 2026 OTG Market. All rights reserved.
-      </p>
     </div>
   );
 };
