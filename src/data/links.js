@@ -1,39 +1,39 @@
 // Masukkan semua link Anda di file ini
 
 export const mainLinks = [
-  { 
-    title: 'Testi And Stock ( Saluran Wa OTG Market Game )', 
-    url: 'https://whatsapp.com/channel/ISI_LINK_SALURAN_DISINI' 
+  {
+    title: 'Testi And Stock ( Saluran Wa OTG Market Game )',
+    url: 'https://whatsapp.com/channel/0029Vb8H9kY0QeatFaGQWL3A'
   },
-  { 
-    title: 'Testi And Stock ( Saluran Wa OTG Market Ti )', 
-    url: 'https://whatsapp.com/channel/ISI_LINK_SALURAN_DISINI' 
+  {
+    title: 'Testi And Stock ( Saluran Wa OTG Market Ti )',
+    url: 'https://whatsapp.com/channel/0029VbDBpzTHLHQZ7VINeV3C'
   },
-  { 
-    title: 'Prestasi Tim OTG ( Saluran Wa )', 
-    url: 'https://whatsapp.com/channel/ISI_LINK_SALURAN_DISINI' 
+  {
+    title: 'Prestasi Tim OTG ( Saluran Wa )',
+    url: 'https://whatsapp.com/channel/0029VbCuMNy7T8bRzcM6B53l'
   },
-  { 
-    title: 'Grup JB OTG Market', 
-    url: 'https://chat.whatsapp.com/ISI_LINK_GRUP_DISINI' 
+  {
+    title: 'Grup JB OTG Market',
+    url: 'https://chat.whatsapp.com/L0HKwhxyInuG3uh1aSdqpP?s=cl&p=a&ilr=2'
   },
-  { 
-    title: 'Grup OTG Turnamen', 
-    url: 'https://chat.whatsapp.com/ISI_LINK_GRUP_DISINI' 
+  {
+    title: 'Grup OTG Turnamen',
+    url: 'https://chat.whatsapp.com/EdKwQ6RdnryD6RlrEJHVkn?s=cl&p=a&ilr=2'
   },
-  { 
-    title: 'Grup OTG Ti', 
-    url: 'https://chat.whatsapp.com/ISI_LINK_GRUP_DISINI' 
+  {
+    title: 'Grup OTG Ti',
+    url: 'https://chat.whatsapp.com/BDiweW2BuyiH2g6FuKEPCI?s=cl&p=a&ilr=2'
   },
-  { 
-    title: 'Wa Admin / Rekber', 
-    url: 'https://wa.me/6280000000000' 
+  {
+    title: 'Wa Admin / Rekber',
+    url: 'https://wa.me/6285159225304'
   },
 ];
 
 export const socialLinks = {
-  instagram: 'https://instagram.com/ISI_USERNAME_IG',
-  tiktok: 'https://tiktok.com/@ISI_USERNAME_TIKTOK',
-  twitter: 'https://twitter.com/ISI_USERNAME_TWITTER',
-  telegram: 'https://t.me/ISI_USERNAME_TELEGRAM',
+  instagram: 'https://www.instagram.com/oktagram_maou?igsh=YXo5dXpwMXBvZjlo',
+  tiktok: 'https://www.tiktok.com/@otg_market?_r=1&_t=ZS-96yz4zOBqwk',
+  twitter: '#',
+  telegram: 'https://t.me/oktagram_maou',
 };
