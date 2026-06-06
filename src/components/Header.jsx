@@ -51,7 +51,7 @@ const Header = () => {
       {/* Navigation Tabs */}
       <div className="flex w-full border-t border-white/10 overflow-x-auto custom-scrollbar">
         <button
-          onClick={() => navigate('/INFORMASI')}
+          onClick={() => navigate('/informasi')}
           className={`flex-1 py-3 px-4 text-xs sm:text-sm font-bold tracking-wider transition-colors duration-200 border-b-2 whitespace-nowrap ${
             currentView === 'informasi'
               ? 'text-primary border-primary bg-primary/5'
@@ -61,7 +61,7 @@ const Header = () => {
           INFORMASI
         </button>
         <button
-          onClick={() => navigate('/FEE TRANSAKSI')}
+          onClick={() => navigate('/fee')}
           className={`flex-1 py-3 px-4 text-xs sm:text-sm font-bold tracking-wider transition-colors duration-200 border-b-2 whitespace-nowrap ${
             currentView === 'fee'
               ? 'text-primary border-primary bg-primary/5'
@@ -71,7 +71,7 @@ const Header = () => {
           FEE TRANSAKSI
         </button>
         <button
-          onClick={() => navigate('/PERATURAN')}
+          onClick={() => navigate('/peraturan')}
           className={`flex-1 py-3 px-4 text-xs sm:text-sm font-bold tracking-wider transition-colors duration-200 border-b-2 whitespace-nowrap ${
             currentView === 'peraturan'
               ? 'text-primary border-primary bg-primary/5'

@@ -10,14 +10,14 @@ import CariAkunModal from '../components/modals/CariAkunModal';
 const FeeTransaksiView = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const path = decodeURIComponent(location.pathname);
+  const path = decodeURIComponent(location.pathname).toLowerCase();
 
-  const isRekberModalOpen = path === '/FEE TRANSAKSI/Jasa Rekber/Mc';
-  const isRebinModalOpen = path === '/FEE TRANSAKSI/Jasa Pengamanan akun ( Rebin )';
-  const isSallerModalOpen = path === '/FEE TRANSAKSI/Jasa Penjualan Akun ( Stock/Saller )';
-  const isCariAkunModalOpen = path === '/FEE TRANSAKSI/Jasa Pencarian Akun ( Ml/FF )';
+  const isRekberModalOpen = path === '/fee/rekber';
+  const isRebinModalOpen = path === '/fee/rebin';
+  const isSallerModalOpen = path === '/fee/saller';
+  const isCariAkunModalOpen = path === '/fee/cari';
 
-  const handleClose = () => navigate('/FEE TRANSAKSI');
+  const handleClose = () => navigate('/fee');
 
   return (
     <section className="w-full flex flex-col gap-4 animate-fade-in">
@@ -30,17 +30,14 @@ const FeeTransaksiView = () => {
       </div>
 
       {feeLinks.map((link, index) => {
-        if (link.title === 'Jasa Rekber/Mc') {
-          return <LinkCard key={`fee-${index}`} title={link.title} onClick={() => navigate(`/FEE TRANSAKSI/${link.title}`)} />;
-        }
-        if (link.title === 'Jasa Pengamanan akun ( Rebin )') {
-          return <LinkCard key={`fee-${index}`} title={link.title} onClick={() => navigate(`/FEE TRANSAKSI/${link.title}`)} />;
-        }
-        if (link.title === 'Jasa Penjualan Akun ( Stock/Saller )') {
-          return <LinkCard key={`fee-${index}`} title={link.title} onClick={() => navigate(`/FEE TRANSAKSI/${link.title}`)} />;
-        }
-        if (link.title === 'Jasa Pencarian Akun ( Ml/FF )') {
-          return <LinkCard key={`fee-${index}`} title={link.title} onClick={() => navigate(`/FEE TRANSAKSI/${link.title}`)} />;
+        let slug = '';
+        if (link.title === 'Jasa Rekber/Mc') slug = 'rekber';
+        if (link.title === 'Jasa Pengamanan akun ( Rebin )') slug = 'rebin';
+        if (link.title === 'Jasa Penjualan Akun ( Stock/Saller )') slug = 'saller';
+        if (link.title === 'Jasa Pencarian Akun ( Ml/FF )') slug = 'cari';
+
+        if (slug) {
+          return <LinkCard key={`fee-${index}`} title={link.title} onClick={() => navigate(`/fee/${slug}`)} />;
         }
         return <LinkCard key={`fee-${index}`} title={link.title} url={link.url} />;
       })}
