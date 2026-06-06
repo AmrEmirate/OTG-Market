@@ -31,5 +31,20 @@
     "postcss": "^8.5.15",
     "tailwindcss": "^4.3.0",
     "vite": "^8.0.12"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "pnpm": {
+    "supportedArchitectures": {
+      "os": [
+        "linux",
+        "win32"
+      ],
+      "cpu": [
+        "x64",
+        "arm64"
+      ]
+    }
   }
 }
