@@ -29,11 +29,16 @@ export const mainLinks = [
     title: 'Wa Admin / Rekber',
     url: 'https://wa.me/6285159225304'
   },
+  {
+    title: 'Wa Cadangan',
+    url: 'https://wa.me/6281284525304'
+  },
 ];
 
 export const socialLinks = {
   instagram: 'https://www.instagram.com/oktagram_maou?igsh=YXo5dXpwMXBvZjlo',
   tiktok: 'https://www.tiktok.com/@otg_market?_r=1&_t=ZS-96yz4zOBqwk',
-  twitter: '#',
+  twitter: 'https://x.com/OTGMarketko',
   telegram: 'https://t.me/oktagram_maou',
+  gmail: 'mailto:oktagrammaouu@gmail.com',
 };
