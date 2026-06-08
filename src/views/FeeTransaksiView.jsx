@@ -6,6 +6,7 @@ import RekberModal from '../components/modals/RekberModal';
 import RebinModal from '../components/modals/RebinModal';
 import SallerModal from '../components/modals/SallerModal';
 import CariAkunModal from '../components/modals/CariAkunModal';
+import OtgTiModal from '../components/modals/OtgTiModal';
 
 const FeeTransaksiView = () => {
   const location = useLocation();
@@ -16,6 +17,7 @@ const FeeTransaksiView = () => {
   const isRebinModalOpen = path === '/fee/rebin';
   const isSallerModalOpen = path === '/fee/saller';
   const isCariAkunModalOpen = path === '/fee/cari';
+  const isOtgTiModalOpen = path === '/fee/otg-ti';
 
   const handleClose = () => navigate('/fee');
 
@@ -35,6 +37,7 @@ const FeeTransaksiView = () => {
         if (link.title === 'Jasa Pengamanan akun ( Rebin )') slug = 'rebin';
         if (link.title === 'Jasa Penjualan Akun ( Stock/Saller )') slug = 'saller';
         if (link.title === 'Jasa Pencarian Akun ( Ml/FF )') slug = 'cari';
+        if (link.title === 'List OTG Market TI') slug = 'otg-ti';
 
         if (slug) {
           return <LinkCard key={`fee-${index}`} title={link.title} onClick={() => navigate(`/fee/${slug}`)} />;
@@ -46,6 +49,7 @@ const FeeTransaksiView = () => {
       <RebinModal isOpen={isRebinModalOpen} onClose={handleClose} />
       <SallerModal isOpen={isSallerModalOpen} onClose={handleClose} />
       <CariAkunModal isOpen={isCariAkunModalOpen} onClose={handleClose} />
+      <OtgTiModal isOpen={isOtgTiModalOpen} onClose={handleClose} />
     </section>
   );
 };

@@ -7,7 +7,7 @@ export const mainLinks = [
   },
   {
     title: 'Testi And Stock ( Saluran Wa OTG Market Ti )',
-    url: 'https://whatsapp.com/channel/0029VbDBpzTHLHQZ7VINeV3C'
+    url: 'https://whatsapp.com/channel/0029Vb7U3xVChq6QETab8o1t'
   },
   {
     title: 'Prestasi Tim OTG ( Saluran Wa )',
@@ -58,6 +58,10 @@ export const feeLinks = [
   },
   {
     title: 'Jasa Pencarian Akun ( Ml/FF )',
+    url: '#'
+  },
+  {
+    title: 'List OTG Market TI',
     url: '#'
   }
 ];
