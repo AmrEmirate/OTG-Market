@@ -41,6 +41,9 @@ export const socialLinks = {
   twitter: 'https://x.com/OTGMarketko',
   telegram: 'https://t.me/oktagram_maou',
   gmail: 'mailto:oktagrammaouu@gmail.com',
+  facebook: '#',
+  tokopedia: '#',
+  shopee: '#',
 };
 
 export const feeLinks = [
@@ -61,7 +64,11 @@ export const feeLinks = [
     url: '#'
   },
   {
-    title: 'List OTG Market TI',
+    title: 'Jasa OTG Market TI',
+    url: '#'
+  },
+  {
+    title: 'Jasa Premium Otg Market TI',
     url: '#'
   }
 ];
